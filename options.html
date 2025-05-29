@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GFG to Notion Sync</title>
+    <link rel="stylesheet" href="options.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="floating-shape algo"><i class="fas fa-code"></i></div>
+        <div class="floating-shape tree"><i class="fas fa-project-diagram"></i></div>
+    </div>
+    
+    <div class="container">
+        <div class="glass-effect">
+            <div class="header">
+                <i class="fas fa-sync-alt header-icon"></i>
+                <h1>GFG to Notion Sync</h1>
+                <p class="subtitle">Your DSA Progress Tracker</p>
+            </div>
+
+            <form id="settingsForm">
+                <div class="section">
+                    <h2>Quick Settings</h2>
+                    <div class="toggle-group">
+                        <label class="toggle">
+                            <input type="checkbox" id="includeCode" checked>
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-label">Include Solution Code</span>
+                            <small>Save your solutions in Notion for future reference</small>
+                        </label>
+                        
+                        <label class="toggle">
+                            <input type="checkbox" id="autoSync" checked>
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-label">Auto-sync Solutions</span>
+                            <small>Automatically sync when you solve a problem</small>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Notion Connection</h2>
+                    <div class="connection-status">
+                        <div class="status-indicator connected">
+                            <i class="fas fa-check-circle"></i>
+                            Pre-configured and Ready
+                        </div>
+                    </div>
+                    
+                    <div class="actions">
+                        <button type="button" id="testConnection" class="btn btn-primary">
+                            <i class="fas fa-vial"></i> Test Connection
+                        </button>
+                        <button type="button" id="showConfig" class="btn btn-secondary">
+                            <i class="fas fa-cog"></i> Show Configuration
+                        </button>
+                    </div>
+                </div>
+
+                <div class="section config-details" style="display: none;">
+                    <h3>Advanced Configuration</h3>
+                    <div class="form-group pre-configured">
+                        <label for="notionApiKey">Notion API Key</label>
+                        <input type="password" id="notionApiKey" value="secret_ntn_250652508248HsfTizvQHIPgbVymhT8a19TMInQka3YeeP">
+                    </div>
+                    
+                    <div class="form-group pre-configured">
+                        <label for="databaseId">Database ID</label>
+                        <input type="text" id="databaseId" value="1be5d6016008802998b9ef6a0aeaedbb">
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Statistics</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <i class="fas fa-check"></i>
+                            <div class="stat-value" id="totalSynced">0</div>
+                            <div class="stat-label">Problems Synced</div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-clock"></i>
+                            <div class="stat-value" id="lastSyncTime">Never</div>
+                            <div class="stat-label">Last Sync</div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="status" class="status-message" style="display: none;"></div>
+    <div id="statusMessage" class="status-message" style="display: none;"></div>
+    <script src="options.js"></script>
+</body>
+</html>

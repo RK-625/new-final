@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 GFG to Notion</h1>
+            <p>Sync your solved problems</p>
+        </div>
+        
+        <div class="status" id="status">
+            <div class="status-indicator" id="statusIndicator"></div>
+            <span id="statusText">Checking configuration...</span>
+        </div>
+        
+        <div class="actions">
+            <button id="syncBtn" class="btn btn-primary" disabled>
+                📝 Sync Current Problem
+            </button>
+            
+            <button id="settingsBtn" class="btn btn-secondary">
+                ⚙️ Settings
+            </button>
+        </div>
+        
+        <div class="info">
+            <div class="info-item">
+                <span class="label">Problems Synced:</span>
+                <span id="syncCount">0</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Last Sync:</span>
+                <span id="lastSync">Never</span>
+            </div>
+        </div>
+        
+
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

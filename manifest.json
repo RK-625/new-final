@@ -1,0 +1,52 @@
+{
+  "manifest_version": 3,
+  "name": "GFG to Notion Sync",
+  "version": "1.0",
+  "description": "Automatically sync solved GeeksforGeeks problems to Notion database",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://api.notion.com/*",
+    "https://www.geeksforgeeks.org/*",
+    "https://naukri.com/*",
+    "https://*.naukri.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.geeksforgeeks.org/problems/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://naukri.com/code360/*", 
+        "https://*.naukri.com/code360/*",
+        "https://www.naukri.com/code360/problems/*",
+        "*://www.naukri.com/code360/*",
+        "*://naukri.com/code360/*"
+      ],
+      "js": ["naukri-content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
+}
